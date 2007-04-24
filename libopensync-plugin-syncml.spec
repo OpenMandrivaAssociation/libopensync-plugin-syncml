@@ -1,5 +1,5 @@
 %define name	libopensync-plugin-syncml
-%define version	0.20
+%define version	0.22
 %define release %mkrel 1
 
 Name: 	 	%{name}
