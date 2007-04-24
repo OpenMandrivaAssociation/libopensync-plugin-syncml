@@ -7,7 +7,7 @@ Summary: 	SyncML plugin for opensync synchronization tool
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		svn://svn.opensync.org/plugins/syncml/%{name}-%{version}.tar.gz
+Source:		svn://svn.opensync.org/plugins/syncml/%{name}-%{version}.tar.bz2
 URL:		http://www.opensync.org
 License:	LGPL
 Group:		Office
