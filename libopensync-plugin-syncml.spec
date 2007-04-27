@@ -3,21 +3,18 @@
 %define release %mkrel 1
 
 Name: 	 	%{name}
-Summary: 	SyncML plugin for opensync synchronization tool
 Version: 	%{version}
 Release: 	%{release}
-
-Source:		svn://svn.opensync.org/plugins/syncml/%{name}-%{version}.tar.bz2
-URL:		http://www.opensync.org
+Summary: 	SyncML plugin for opensync synchronization tool
 License:	LGPL
 Group:		Office
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-
-BuildRequires:	opensync-devel >= 0.20
-BuildRequires:	libsyncml-devel >= 0.4.2
-
+URL:		http://www.opensync.org
+Source:		svn://svn.opensync.org/plugins/syncml/%{name}-%{version}.tar.bz2
 Obsoletes:	multisync-syncml
 Provides:	multisync-syncml
+BuildRequires:	opensync-devel >= 0.20
+BuildRequires:	libsyncml-devel >= 0.4.2
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This plugin allows applications using OpenSync to synchronise via SyncML
