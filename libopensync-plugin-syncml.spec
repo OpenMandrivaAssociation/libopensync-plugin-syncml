@@ -14,6 +14,7 @@ Obsoletes:	multisync-syncml
 Provides:	multisync-syncml
 BuildRequires:	opensync-devel >= 0.20
 BuildRequires:	libsyncml-devel >= 0.4.2
+BuildRequires:	scons
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -21,15 +22,13 @@ This plugin allows applications using OpenSync to synchronise via SyncML
 
 %prep
 %setup -q
-autoreconf -sfi
 
 %build
-%configure2_5x
-%make
-										
+scons prefix=%{_prefix}
+
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+scons install DESTDIR=%{buildroot}
 
 %find_lang %name
 
