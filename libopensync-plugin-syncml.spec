@@ -24,7 +24,7 @@ This plugin allows applications using OpenSync to synchronise via SyncML
 %setup -q
 
 %build
-scons prefix=%{_prefix}
+scons prefix=%{_prefix} libsuffix=%{_lib}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,5 +40,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS
 %{_libdir}/opensync/plugins/*
 %{_datadir}/opensync/defaults/*
-
-
