@@ -15,7 +15,6 @@ Provides:	multisync-syncml
 BuildRequires:	opensync-devel >= 0.20
 BuildRequires:	libsyncml-devel >= 0.4.2
 BuildRequires:	cmake
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This plugin allows applications using OpenSync to synchronise via SyncML
