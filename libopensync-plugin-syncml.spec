@@ -42,4 +42,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS
 %{_libdir}/opensync-1.0/plugins/*
-%{_datadir}/opensynic-1.0/defaults/*
+%{_datadir}/opensync-1.0/defaults/*
