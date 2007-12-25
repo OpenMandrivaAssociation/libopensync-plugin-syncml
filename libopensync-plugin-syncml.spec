@@ -1,5 +1,5 @@
 %define name	libopensync-plugin-syncml
-%define version	0.34
+%define version	0.35
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -41,5 +41,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS
-%{_libdir}/opensync/plugins/*
-%{_datadir}/opensync/defaults/*
+%{_libdir}/opensync-1.0/plugins/*
+%{_datadir}/opensynic-1.0/defaults/*
