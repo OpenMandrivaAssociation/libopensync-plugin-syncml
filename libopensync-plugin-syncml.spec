@@ -1,45 +1,45 @@
-%define name	libopensync-plugin-syncml
-%define version	0.36
-%define release %mkrel 1
-
-Name: 	 	%{name}
-Version: 	%{version}
-Release: 	%{release}
-Summary: 	SyncML plugin for opensync synchronization tool
+Name: 	 	libopensync-plugin-syncml
+Version: 	0.22
+Epoch:		1
+Release: 	%{mkrel 2}
+Summary: 	SyncML plugin for OpenSync synchronization framework
 License:	LGPLv2+
 Group:		Office
 URL:		http://www.opensync.org
-Source:		http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
+Source0:	http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
+# Seriously, what the hell. - AdamW 2008/03
+Patch0:		libopensync-plugin-syncml-0.22-warning.patch
 Obsoletes:	multisync-syncml
 Provides:	multisync-syncml
-BuildRequires:	opensync-devel >= 0.20
+BuildRequires:	libopensync-devel < 0.30
 BuildRequires:	libsyncml-devel >= 0.4.2
-BuildRequires:	cmake
+Requires:	libopensync >= %{epoch}:%{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-This plugin allows applications using OpenSync to synchronise via SyncML
+This plugin allows applications using OpenSync to synchronise via
+SyncML.
 
 %prep
 %setup -q
+%patch0 -p1 -b .warning
+autoreconf -sfi
 
 %build
-%cmake
+%configure2_5x
 %make
-
+										
 %install
-rm -rf $RPM_BUILD_ROOT
-cd build
+rm -rf %{buildroot}
 %makeinstall_std
-cd -
 
-%find_lang %name
+%find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS
-%{_libdir}/opensync-1.0/plugins/*
-%{_datadir}/opensync-1.0/defaults/*
+%{_libdir}/opensync/plugins/*
+%{_datadir}/opensync/defaults/*
