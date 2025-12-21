@@ -11,6 +11,11 @@ Source0:	http://www.opensync.org/download/releases/%{version}/%{name}-%{version}
 Patch0:		libopensync-plugin-syncml-0.22-warning.patch
 Obsoletes:	multisync-syncml
 Provides:	multisync-syncml
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libopensync-devel < 0.30
 BuildRequires:	libsyncml-devel >= 0.4.2
 Requires:	libopensync >= %{epoch}:%{version}
