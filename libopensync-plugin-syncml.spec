@@ -1,7 +1,7 @@
 Name: 	 	libopensync-plugin-syncml
 Version: 	0.22
 Epoch:		1
-Release: 	%mkrel 5
+Release: 	6
 Summary: 	SyncML plugin for OpenSync synchronization framework
 License:	LGPLv2+
 Group:		Office
